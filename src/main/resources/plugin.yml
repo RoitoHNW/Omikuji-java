@@ -1,0 +1,8 @@
+name: Omikuji
+version: 1.00
+main: com.github.roitohnw.omikuji.Omikuji
+api-version: 1.17
+authors: [ Roito_HNW ]
+description: Omikuji plugin
+commands:
+  omikuji:
