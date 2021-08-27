@@ -39,7 +39,6 @@ public final class Omikuji extends JavaPlugin {
             }
             isRunning.add(player.getUniqueId());
             sender.sendMessage("§d§lあなたの運勢を占います。");
-            player.playSound(player.getLocation(), Sound.ENTITY_WITHER_SPAWN, 0.5f, 1f);
             int mikuji = new Random().nextInt(5);
             String unt;
             switch (mikuji){
@@ -60,9 +59,22 @@ public final class Omikuji extends JavaPlugin {
                     break;
             }
             Bukkit.getScheduler().runTaskLater(this,()->{
+                sender.sendMessage("§f§l抽選中");
+            },20);
+            Bukkit.getScheduler().runTaskLater(this,()->{
+                sender.sendMessage("§f§l  ・");
+            },60);
+            Bukkit.getScheduler().runTaskLater(this,()->{
+                sender.sendMessage("§f§l  ・");
+            },100);
+            Bukkit.getScheduler().runTaskLater(this,()->{
+                sender.sendMessage("§f§l  ・");
+            },140);
+            Bukkit.getScheduler().runTaskLater(this,()->{
+                player.playSound(player.getLocation(), Sound.ENTITY_WITHER_SPAWN, 0.5f, 1f);
             Bukkit.broadcastMessage("§f§l" + sender.getName() + "§f§lさんの今日の運勢は" + unt + "§f§lです");
             isRunning.remove(player.getUniqueId());
-            },40);
+            },190);
 
         }
     return true;
